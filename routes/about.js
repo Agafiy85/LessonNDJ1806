@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/about', (req, res, next) =>{
-    let aboutDB = JSON.parse(fs.readFileSync('./db/aboutDB.txt', 'utf8'));
+    let aboutDB = JSON.parse(fs.readFileSync('db/aboutDB.txt', 'utf8'));
 
     res.render('about',{
         title: aboutDB.title,
