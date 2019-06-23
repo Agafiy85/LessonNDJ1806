@@ -1,5 +1,4 @@
 {
-  "title": "About Page",
-  "capture": "Its a ABOUT PAGE our site",
-  "text": "I create this page with PUG and NODE JS"
+  "title": "About us",
+  "capture": "About us"
 }

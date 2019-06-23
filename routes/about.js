@@ -1,16 +1,19 @@
-const express = require(`express`);
+const path = require('path');
 const fs = require(`fs`);
+const express = require('express');
+
 const router = express.Router();
 
+router.get('/about', (req, res, next) => {
 
-router.get('/about', (req, res, next) =>{
-    let aboutDB = JSON.parse(fs.readFileSync('db/aboutDB.txt', 'utf8'));
+//res.sendFile(path.join(__dirname, '../', 'views', 'contact.html'));
+let aboutDB = JSON.parse(fs.readFileSync('./DataB/abouttDB.txt', 'utf8'));
+res.render('contact', {
+    title: aboutDB.title,
+    mainheader: aboutDB.capture
 
-    res.render('about',{
-        title: aboutDB.title,
-        h1: aboutDB.capture,
-        p: aboutDB.text 
-    });
+});
+
 });
 
 module.exports = router;

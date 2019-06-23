@@ -1,24 +1,19 @@
 const path = require('path');
-const fs = require("fs");
+const fs = require(`fs`);
+const express = require('express');
 
-const express = require(`express`);
-
-// const fs = require(`fs`);
 const router = express.Router();
 
-router.get('/contact', (req, res, next) =>{
-    //let contactDB =(path.readFileSync('db/contactDB.txt'));
+router.get('/contact', (req, res, next) => {
 
-    let contents = fs.readFileSync(path.join(__dirname,  "aboutDB.txt"));
-    
-    console.log(contents);
+//res.sendFile(path.join(__dirname, '../', 'views', 'contact.html'));
+let contactDB = JSON.parse(fs.readFileSync('./DataB/contactDB.txt', 'utf8'));
+res.render('contact', {
+    title: contactDB.title,
+    mainheader: contactDB.capture
 
-    // res.render('contact',{
-    //     title: contactDB,
-    //     h1: contactDB.capture,
-    //     p: contactDB.text 
-    // });
-    
+});
+
 });
 
 module.exports = router;
