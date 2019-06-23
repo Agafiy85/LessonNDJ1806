@@ -1,0 +1,5 @@
+{
+  "title": "Contact Page",
+  "capture": "Its a CONTACT PAGE our site",
+  "text": "I create this page with PUG and NODE JS"
+}
